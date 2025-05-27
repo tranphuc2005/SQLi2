@@ -267,7 +267,7 @@ def get_database_names():
 - Mỗi lần thử, hàm tìm chiều dài và nội dung của một tên cơ sở dữ liệu, sau đó thêm vào danh sách `databases`.
 
 **Kết quả DATABASE:**
-![Screenshot 2025-05-27 144449](https://github.com/user-attachments/assets/b44c427c-416e-4e77-a666-7ebbf1b0af3e)
+![Screenshot 2025-05-27 144449](https://github.com/user-attachments/assets/32662a27-a001-448f-b8c8-3e836fa1a6aa)
 
 ##### 7.Hàm `get_tables`
 
@@ -294,7 +294,8 @@ def get_tables(database):
 ```
 
 **Kết quả TABLES:**
-![Screenshot 2025-05-27 144524](https://github.com/user-attachments/assets/6783d077-aa83-45f7-a235-7078357bbcbf)
+![Screenshot 2025-05-27 144524](https://github.com/user-attachments/assets/9af5e4c5-e879-41c2-af89-8956518f8b61)
+
 
 ##### 8.Hàm  `get_columns`
 
@@ -326,7 +327,8 @@ def get_columns(table, database, selected_columns=None):
 ```
 
 **Kết quả COLUMNS:**
-![Screenshot 2025-05-27 144549](https://github.com/user-attachments/assets/95f11662-cfe1-4241-97ca-97db6551e782)
+![Screenshot 2025-05-27 144549](https://github.com/user-attachments/assets/d5c0602b-fea8-42f4-89fc-575166b0fc12)
+
 
 ##### 9.Hàm `get_data_from_table`
 
@@ -357,7 +359,8 @@ def get_data_from_table(table, selected_columns, database):
 ```
 
 **Kết quả VALUE:**
-![Screenshot 2025-05-27 144618](https://github.com/user-attachments/assets/3f77b7f6-4a93-43b1-963b-53342b36eb16)
+![Screenshot 2025-05-27 144618](https://github.com/user-attachments/assets/51e6df22-e312-4e88-99ad-96379b18eb3e)
+
 
 ##### 8.Giao diện người dùng
 ```js
@@ -448,22 +451,24 @@ Thực hành với sqlmap có sẵn ở trên máy, nếu không có hãy cài �
 ```js
 python sqlmap.py -u "http://127.0.0.1:5000/search?id=1" --dbs
 ```
+![Screenshot 2025-05-27 144646](https://github.com/user-attachments/assets/5e68d8df-441e-4dae-affc-7b6d72af86ed)
 
-![Screenshot 2025-05-27 144646](https://github.com/user-attachments/assets/8228e385-0827-4bf0-b9c4-ab8059e95100)
 
 **Bước 3:** Thực hiện câu lệnh để liệt kê tất cả các **Tables** của cơ sở dữ liệu mà bạn chọn
 ```js
 python sqlmap.py -u "http://127.0.0.1:5000/search?id=1" -D luutru_thongtin --tables
 ```
 
-![Screenshot 2025-05-27 144711](https://github.com/user-attachments/assets/8586fcde-1325-4b09-b6e6-14234e7ec6bc)
+![Screenshot 2025-05-27 144711](https://github.com/user-attachments/assets/47a13e90-2e76-4aa3-8cde-5db2ee26be1e)
+
 
 **Bước 4:** Thực hiện câu lệnh để liệt kê tất cả các **Colums** của bảng mà bạn chọn
 ```js
 python sqlmap.py -u "http://127.0.0.1:5000/search?id=1" -D luutru_thongtin -T teachers --columns
 ```
 
-![Screenshot 2025-05-27 144733](https://github.com/user-attachments/assets/3ef9c8c5-6eaf-491f-843f-a00273a8e7b2)
+![Screenshot 2025-05-27 144733](https://github.com/user-attachments/assets/926c7750-3aed-474e-9907-22353b742e5f)
+
 
 **Bước 5:** Thực hiện câu lệnh để lấy ra các giá trị trong từng cột mà bạn muốn
 ```js
@@ -471,15 +476,15 @@ python sqlmap.py -u "http://127.0.0.1:5000/search?id=1" -D luutru_thongtin -T te
 ```
 
 **Kết quả** sẽ trả về tài khoản và mật khẩu được lưu trong cơ sở dữ liệu 
-![Screenshot 2025-05-27 144756](https://github.com/user-attachments/assets/ab7b2f58-c718-49b9-94b1-4148f04edc7e)
 
+![Screenshot 2025-05-27 144756](https://github.com/user-attachments/assets/ae2aaa33-dc85-4df4-bcf6-9efc0079072b)
 
 # 3. Vượt qua các challenge SQLi
 
 ### 3.1 Challenge trên portswigger
 #### 1. Challenge 1
 
-![Screenshot 2025-05-27 144835](https://github.com/user-attachments/assets/bb9685bf-74de-4433-9096-4f22bfeacb6a)
+![Screenshot 2025-05-27 144835](https://github.com/user-attachments/assets/37d62e21-510c-4e4e-8e68-68794af45ba5)
 
 **Giải pháp**
 1. Sửa đổi `category`tham số, cung cấp cho nó giá trị`'+OR+1=1--`
@@ -487,20 +492,20 @@ python sqlmap.py -u "http://127.0.0.1:5000/search?id=1" -D luutru_thongtin -T te
 
 Kết quả :
 
-![Screenshot 2025-05-27 144914](https://github.com/user-attachments/assets/f15583e7-0809-41d5-b20a-e644819d4721)
+![Screenshot 2025-05-27 144914](https://github.com/user-attachments/assets/c9a63264-b3f6-4c38-9f8b-246d2d9a772d)
 
 ##### 2.Challenge 2
 
-![Screenshot 2025-05-27 145047](https://github.com/user-attachments/assets/216736cc-b01c-401e-9e65-e41b6758cd99)
+![Screenshot 2025-05-27 145047](https://github.com/user-attachments/assets/aa6ef6c1-9a5c-48b2-a4c2-47532a4d18af)
 
 **Giải pháp**
 1. Sửa đổi `username`tham số bằng cách gán giá trị cho nó:`administrator'--`
 
-![Screenshot 2025-05-27 145110](https://github.com/user-attachments/assets/50ef5d6d-db20-446c-9f5d-61bd131861f2)
+![Screenshot 2025-05-27 145110](https://github.com/user-attachments/assets/9eaa07c3-f443-4f62-8a6e-4436b642a432)
 
 ##### 3. Challenge 3
 
-![Screenshot 2025-05-27 145129](https://github.com/user-attachments/assets/b9598000-0f82-4547-bc9d-c5d61a25ab69)
+![Screenshot 2025-05-27 145129](https://github.com/user-attachments/assets/17c1ea40-82b6-4d92-8f79-43266dcd4bce)
 
 **Giải pháp**
 
@@ -511,15 +516,15 @@ Kết quả :
 
 
 Nếu kiếm tra có lỗi `500` này thì tiếp tục tăng thêm NULL
-![Screenshot 2025-05-27 145201](https://github.com/user-attachments/assets/2c80ab11-6a78-4c24-a1e8-bf26a1b36e3c)
+![Screenshot 2025-05-27 145201](https://github.com/user-attachments/assets/bb61571f-d313-4f96-a1ca-764cc4bbe976)
 
 Kết quả ra `200` thì đã thành công 
 
-![Screenshot 2025-05-27 145219](https://github.com/user-attachments/assets/3a800176-872a-4cf9-a1d9-ad5763cd2cd2)
+![Screenshot 2025-05-27 145219](https://github.com/user-attachments/assets/82208459-537e-40d2-ab97-a2a832fc001f)
 
 ##### 4. Challenge 4
 
-![Screenshot 2025-05-27 145239](https://github.com/user-attachments/assets/9bf5b1c6-39a8-4991-822a-85efa3792ca9)
+![Screenshot 2025-05-27 145239](https://github.com/user-attachments/assets/b97a3021-f816-4bd7-aebe-ba0664e521fb)
 
 **Giải pháp**
 
@@ -532,11 +537,12 @@ Kết quả ra `200` thì đã thành công
     `'+UNION+SELECT+'abcdef',NULL,NULL--`
 4. Nếu xảy ra lỗi, hãy chuyển sang giá trị null tiếp theo và thử giá trị đó.
 
-![Screenshot 2025-05-27 145302](https://github.com/user-attachments/assets/9371914b-85f2-434d-be61-c62239fed2d1)
+![Screenshot 2025-05-27 145302](https://github.com/user-attachments/assets/8e1acee0-6c58-4708-ab16-975fef61e989)
+
 
 ##### 5. Challenge 5
 
-![Screenshot 2025-05-27 145319](https://github.com/user-attachments/assets/20d944a3-2f9f-46de-a7d2-3e6b9628a4f5)
+![Screenshot 2025-05-27 145319](https://github.com/user-attachments/assets/b151fc5f-92eb-4d80-847a-fb44d0866a18)
 
 **Giải pháp**
 1. Sử dụng Burp Suite để chặn và sửa đổi yêu cầu thiết lập bộ lọc danh mục sản phẩm.
@@ -547,12 +553,12 @@ Kết quả ra `200` thì đã thành công
     
     `'+UNION+SELECT+username,+password+FROM+users--`
 4. Xác minh rằng phản hồi của ứng dụng có chứa tên người dùng và mật khẩu.
-![Screenshot 2025-05-27 145339](https://github.com/user-attachments/assets/70e8ad42-76f9-431e-b5fb-42dba75b788e)
+
+![Screenshot 2025-05-27 145339](https://github.com/user-attachments/assets/b21cc1bf-dc65-4a11-a8bc-852d83e254ea)
 
 ##### 6. Challenge 6
 
-![Screenshot 2025-05-27 145404](https://github.com/user-attachments/assets/5da95ede-c9bc-484e-9529-5f5bdaf87dc3)
-
+![Screenshot 2025-05-27 145404](https://github.com/user-attachments/assets/22248911-a103-4d89-a2c5-863cb538f25c)
 
 **Giải pháp**
 1. Sử dụng Burp Suite để chặn và sửa đổi yêu cầu thiết lập bộ lọc danh mục sản phẩm.
@@ -564,11 +570,11 @@ Kết quả ra `200` thì đã thành công
     `'+UNION+SELECT+NULL,username||'~'||password+FROM+users--`
 4. Xác minh rằng phản hồi của ứng dụng có chứa tên người dùng và mật khẩu.
 
-![Screenshot 2025-05-27 145430](https://github.com/user-attachments/assets/e6996674-948a-4f21-bc67-b1c6e499e651)
+![Screenshot 2025-05-27 145430](https://github.com/user-attachments/assets/9e2a6de4-eb8b-4f9c-8839-467fecbce88e)
 
 ##### 7. Challenge 7
 
-![Screenshot 2025-05-27 145449](https://github.com/user-attachments/assets/17986998-1d83-40e6-9104-b5448c0f9dd2)
+![Screenshot 2025-05-27 145449](https://github.com/user-attachments/assets/0fb53138-f5c2-431c-97d4-da36d9e644d8)
 
 **Giải pháp**
 1. Sử dụng Burp Suite để chặn và sửa đổi yêu cầu thiết lập bộ lọc danh mục sản phẩm.
@@ -579,11 +585,11 @@ Kết quả ra `200` thì đã thành công
     
     `'+UNION+SELECT+@@version,+NULL#`
 
-![Screenshot 2025-05-27 145547](https://github.com/user-attachments/assets/d5165b89-b3cd-42a2-9c68-af5dbb5938ca)
+![Screenshot 2025-05-27 145547](https://github.com/user-attachments/assets/375c0b97-d58e-433e-b5a0-18b49d3723a3)
 
 ##### 8. Challenge 8
 
-![Screenshot 2025-05-27 145616](https://github.com/user-attachments/assets/e325d67b-3c6f-4de4-ab0c-bb4e63353508)
+![Screenshot 2025-05-27 145616](https://github.com/user-attachments/assets/7bb9adaa-531f-4d9b-bf34-c9c420c1c435)
 
 **Giải pháp**
 1. Sử dụng Burp Suite để chặn và sửa đổi yêu cầu thiết lập bộ lọc danh mục sản phẩm.
@@ -600,11 +606,11 @@ Kết quả ra `200` thì đã thành công
     `'+UNION+SELECT+username_abcdef,+password_abcdef+FROM+users_abcdef--`
 8. Tìm mật khẩu của `administrator`người dùng và sử dụng nó để đăng nhập.
 
-![Screenshot 2025-05-27 145642](https://github.com/user-attachments/assets/99941aad-481d-42ab-990c-e371d17be683)
+![Screenshot 2025-05-27 145642](https://github.com/user-attachments/assets/f67e2085-8cc6-4e3e-8e78-84b854bdc6ab)
 
 ##### 9. Challenge 9
 
-![Screenshot 2025-05-27 145704](https://github.com/user-attachments/assets/86a7a0d1-7cfa-4baf-802a-a2b7118dec53)
+![Screenshot 2025-05-27 145704](https://github.com/user-attachments/assets/838afe0a-0cb4-435e-9597-3ede53eec745)
 
 **Giải pháp**
 1. Truy cập trang chủ của cửa hàng và sử dụng Burp Suite để chặn và sửa đổi yêu cầu chứa `TrackingId`cookie. Để đơn giản, hãy nói rằng giá trị ban đầu của cookie là `TrackingId=xyz`.
@@ -670,19 +676,19 @@ Kết quả ra `200` thì đã thành công
 18. Trong trình duyệt, nhấp vào **Tài khoản của tôi** để mở trang đăng nhập. Sử dụng mật khẩu để đăng nhập với tư cách là `administrator`người dùng.
 
 **Thực hiện dò chiều dài của password**
-![Screenshot 2025-05-27 145746](https://github.com/user-attachments/assets/771f9b6e-b384-4a1e-9093-645bb5a8dc5f)
+![Screenshot 2025-05-27 145746](https://github.com/user-attachments/assets/a530e44d-5864-40e9-a56b-3e1e1abaa3e7)
 
 **Thực hiện dò chữ cái đầu tiên của password và sau đó thay đổi đến 20 chữ cái**
 
-![Screenshot 2025-05-27 145822](https://github.com/user-attachments/assets/464e2dba-b86b-4e45-8a3a-86369ef27c69)
+![Screenshot 2025-05-27 145822](https://github.com/user-attachments/assets/f763e0a5-bb31-4024-afe0-c419dca7998b)
 
 **Nếu thấy biến đổi của chữ số nào khác hơn so với những chữ số khác thì suy ra nó thuộc về password**
 
-![Screenshot 2025-05-27 145849](https://github.com/user-attachments/assets/d04eee5d-fd1b-420d-9b88-7d650218f192)
+![Screenshot 2025-05-27 145849](https://github.com/user-attachments/assets/6d417c11-38ff-4dd6-a5ef-26b2077f4357)
 
 ##### 10. Challenge 10
 
-![Screenshot 2025-05-27 145915](https://github.com/user-attachments/assets/6d48087c-fa9b-47a4-ae05-8ad69fb0a330)
+![Screenshot 2025-05-27 145915](https://github.com/user-attachments/assets/1aef4a89-54df-4e9c-b14d-e855c5b455ff)
 
 **Giải pháp**
 1. Truy cập trang chủ của cửa hàng và sử dụng Burp Suite để chặn và sửa đổi yêu cầu chứa `TrackingId`cookie. Để đơn giản, hãy nói rằng giá trị ban đầu của cookie là `TrackingId=xyz`.
@@ -769,8 +775,8 @@ Kết quả ra `200` thì đã thành công
 20. Tiếp tục quá trình này bằng cách kiểm tra độ lệch 3, 4, v.v. cho đến khi bạn có được toàn bộ mật khẩu.
 21. Trong trình duyệt, nhấp vào "Tài khoản của tôi" để mở trang đăng nhập. Sử dụng mật khẩu để đăng nhập với tư cách là người `administrator`dùng.
 
-![Screenshot 2025-05-27 145938](https://github.com/user-attachments/assets/4d471e1c-16af-4f0a-9b41-aa46be7e4eb1)
+![Screenshot 2025-05-27 145938](https://github.com/user-attachments/assets/34e9d801-2d92-40c1-a4b1-d32330986e67)
 
 **Thấy biết động bất thường thì đó là đúng** 
 
-![Screenshot 2025-05-27 150014](https://github.com/user-attachments/assets/2a2fe1e4-e624-4123-a0bf-ec8285679fdd)
+![Screenshot 2025-05-27 150014](https://github.com/user-attachments/assets/a79d010f-7f02-41ba-857a-9678cb0e41ea)
